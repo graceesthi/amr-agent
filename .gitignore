@@ -1,0 +1,48 @@
+# --- secrets ---------------------------------------------------------------
+.env
+
+# --- generated output ------------------------------------------------------
+reports/
+eval/results_*.json
+eval/comparison.md
+eval/budget_demo.json
+
+# Generated data IS committed on purpose — the instructor must be able to run
+# `python src/agent.py` from a clean clone. scripts/build_dataset.py is
+# deterministic, so committing its output costs nothing in reproducibility.
+# If you switch to real data, reconsider this and check the licence.
+#   data/seed/
+#   data/surveillance.json
+
+# --- python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# --- model caches ----------------------------------------------------------
+.cache/
+sentence_transformers_cache/
+
+# --- editors / OS ----------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+
+# Presentation, prep & report artifacts (added later / kept out of git)
+PITCH.md
+SOUTENANCE.md
+SOUTENANCE.pdf
+SELF_ASSESSMENT.md
+REPORT.md
+REPORT.docx
+REPORT.pdf
+REPORT.tex
+
+# LaTeX build junk
+*.log
+*.aux
+*.out
+missfont.log

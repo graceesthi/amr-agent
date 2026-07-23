@@ -1,0 +1,6 @@
+# Optional UI dependency — NOT needed to run the core agent.
+# Install on top of the main requirements:
+#   pip install -r requirements.txt
+#   pip install -r ui/requirements-ui.txt
+#   streamlit run ui/app.py
+streamlit>=1.36.0,<2.0.0

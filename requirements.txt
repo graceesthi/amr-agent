@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------------------
+# AMR Surveillance Agent — dependencies
+#
+# Chat and embeddings run on the OpenAI API. The cross-encoder reranker is the
+# one local model (sentence-transformers), because OpenAI has no reranking API.
+#
+# After a successful install run `pip freeze > requirements.lock.txt` and
+# commit it — that is the exact environment the instructor can reproduce.
+# ---------------------------------------------------------------------------
+
+# --- LLM + embeddings (OpenAI) ---------------------------------------------
+openai>=1.40.0,<2.0.0
+
+# --- Reranking (local cross-encoder) ---------------------------------------
+sentence-transformers>=3.0.0,<6.0.0
+numpy>=1.26.0,<3.0.0
+
+# --- Retrieval -------------------------------------------------------------
+rank-bm25>=0.2.2,<0.3.0
+
+# --- MCP server ------------------------------------------------------------
+mcp>=1.2.0,<2.0.0
+
+# --- Observability ---------------------------------------------------------
+langfuse>=2.50.0,<4.0.0
+
+# --- Evaluation (only needed to run eval/run_ragas.py) ---------------------
+ragas>=0.2.0,<0.4.0
+datasets>=2.19.0,<4.0.0
+langchain-openai>=0.2.0,<1.0.0        # RAGAS judge + embeddings
+
+# --- Utilities -------------------------------------------------------------
+python-dotenv>=1.0.0,<2.0.0
+tenacity>=8.2.0,<10.0.0
+
+# --- Tests -----------------------------------------------------------------
+pytest>=8.0.0,<9.0.0
+pytest-asyncio>=0.23.0,<2.0.0
